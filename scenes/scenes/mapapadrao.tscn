@@ -1,11 +1,14 @@
 [gd_scene format=3 uid="uid://bpnr55t8vrj3n"]
 
+[ext_resource type="Script" uid="uid://bvhtr5v5dmc10" path="res://scripts/Main.gd" id="1_0nv3r"]
 [ext_resource type="PackedScene" uid="uid://cp08nxgn0kya0" path="res://scenes/player/Player.tscn" id="1_g3meh"]
 [ext_resource type="PackedScene" uid="uid://ddsp5covps30m" path="res://scenes/obj/mira.tscn" id="2_v5k24"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wco54"]
 
-[node name="mapapadrao" type="Node2D" unique_id=1103548132]
+[node name="mapapadrao" type="Node2D" unique_id=1103548132 node_paths=PackedStringArray("lbl")]
+script = ExtResource("1_0nv3r")
+lbl = NodePath("CanvasLayer/Main/Mun")
 
 [node name="Player" parent="." unique_id=2012547514 instance=ExtResource("1_g3meh")]
 
@@ -53,6 +56,7 @@ offset_top = 152.0
 offset_right = 80.0
 offset_bottom = 175.0
 scale = Vector2(0.5, 0.5)
+theme_override_font_sizes/font_size = 10
 text = "0"
 horizontal_alignment = 1
 

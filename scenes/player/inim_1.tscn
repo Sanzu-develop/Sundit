@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://cqvf4cyaokqyb"]
+
+[ext_resource type="Script" uid="uid://c2ke7fk1ax8k1" path="res://scripts/inim_1.gd" id="1_433oc"]
+[ext_resource type="Texture2D" uid="uid://cs4e01ex4blho" path="res://sprites/Personagens/inim_4.png" id="2_r12t3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_akuly"]
+size = Vector2(7, 7)
+
+[node name="inim_1" type="CharacterBody2D" unique_id=348602705 node_paths=PackedStringArray("sprite") groups=["enemie"]]
+script = ExtResource("1_433oc")
+sprite = NodePath("Sprite")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=759504764]
+shape = SubResource("RectangleShape2D_akuly")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=2031326131]
+modulate = Color(0.772549, 0.0235294, 0.054902, 1)
+rotation = 1.5707964
+texture = ExtResource("2_r12t3")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=617576013]
+rotation = 1.5708
+collision_layer = 4
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=282789124]
+shape = SubResource("RectangleShape2D_akuly")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

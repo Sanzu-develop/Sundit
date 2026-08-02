@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://cp08nxgn0kya0"]
+
+[ext_resource type="Texture2D" uid="uid://bht5gkfkd8hhd" path="res://sprites/Personagens/Personagem base.png" id="1_xn8pu"]
+[ext_resource type="Texture2D" uid="uid://dcjdxa5csdio4" path="res://sprites/Personagens/Mao.png" id="3_7xbf8"]
+[ext_resource type="Texture2D" uid="uid://dwbc33072du77" path="res://sprites/Objetos/mp5 mao.png" id="4_2fiwl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_akuly"]
+size = Vector2(7, 7)
+
+[node name="Player" type="Node2D" unique_id=821520603 groups=["player"]]
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1419520405]
+rotation = -1.5707964
+texture = ExtResource("1_xn8pu")
+
+[node name="maos" type="Node2D" parent="Sprite" unique_id=1329896662]
+position = Vector2(-1.00002, 5)
+
+[node name="maoe" type="Sprite2D" parent="Sprite/maos" unique_id=724641810]
+position = Vector2(6, 0)
+scale = Vector2(0.502954, 0.494939)
+texture = ExtResource("3_7xbf8")
+
+[node name="maod" type="Sprite2D" parent="Sprite/maos" unique_id=1754859495]
+position = Vector2(-1, 0)
+scale = Vector2(0.502954, 0.494939)
+texture = ExtResource("3_7xbf8")
+
+[node name="arm" type="Sprite2D" parent="Sprite/maos" unique_id=1898640057]
+position = Vector2(2, 0)
+rotation = 2.35619
+scale = Vector2(0.498963, 0.498963)
+skew = -0.0160637
+texture = ExtResource("4_2fiwl")
+
+[node name="maod2" type="Sprite2D" parent="Sprite/maos" unique_id=1654895166]
+visible = false
+position = Vector2(-1, -7.37905e-06)
+scale = Vector2(0.502954, 0.494939)
+texture = ExtResource("3_7xbf8")
+
+[node name="bullet position" type="Marker2D" parent="Sprite/maos" unique_id=2004221881]
+position = Vector2(9, 3.25799e-05)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1176314123]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1977114156]
+shape = SubResource("RectangleShape2D_akuly")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

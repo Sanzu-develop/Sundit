@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://btd1bx23buel2"]
+
+[ext_resource type="Script" uid="uid://cl0pqoroj4m6y" path="res://scripts/inim_4.gd" id="1_ctvrg"]
+[ext_resource type="Texture2D" uid="uid://cs4e01ex4blho" path="res://sprites/Personagens/inim_4.png" id="2_61pvg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_akuly"]
+size = Vector2(7.99994, 8)
+
+[node name="inim_4" type="CharacterBody2D" groups=["enemie"]]
+position = Vector2(48, -300)
+rotation = 1.5708
+scale = Vector2(2.5, 2.5)
+script = ExtResource("1_ctvrg")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_akuly")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_61pvg")
+
+[node name="Area2D" type="Area2D" parent="."]
+rotation = 1.5708
+collision_layer = 4
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_akuly")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

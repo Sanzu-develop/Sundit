@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://ddsp5covps30m"]
+
+[ext_resource type="Script" uid="uid://cvdasptfkqlmh" path="res://scripts/mira.gd" id="1_pleux"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pinrp"]
+size = Vector2(16, 16)
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=360169833 groups=["not_player_collide"]]
+scale = Vector2(0.25, 0.25)
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_pleux")
+
+[node name="mira" type="ColorRect" parent="." unique_id=1805244386]
+offset_right = 8.0
+offset_bottom = 8.0
+color = Color(1, 0, 0, 0.74902)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=4223515]
+position = Vector2(4, 4)
+scale = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_pinrp")

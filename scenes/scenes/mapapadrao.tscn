@@ -1,0 +1,90 @@
+[gd_scene format=3 uid="uid://bpnr55t8vrj3n"]
+
+[ext_resource type="PackedScene" uid="uid://cp08nxgn0kya0" path="res://scenes/player/Player.tscn" id="1_g3meh"]
+[ext_resource type="PackedScene" uid="uid://ddsp5covps30m" path="res://scenes/obj/mira.tscn" id="2_v5k24"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wco54"]
+
+[node name="mapapadrao" type="Node2D" unique_id=1103548132]
+
+[node name="Player" parent="." unique_id=2012547514 instance=ExtResource("1_g3meh")]
+
+[node name="mira" parent="." unique_id=1903136370 instance=ExtResource("2_v5k24")]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=440195082]
+offset = Vector2(0, -40)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1197360270]
+
+[node name="Main" type="Control" parent="CanvasLayer" unique_id=240586847]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Control" type="Control" parent="CanvasLayer/Main" unique_id=2017276793]
+custom_minimum_size = Vector2(50, 40)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="atirar" type="Button" parent="CanvasLayer/Main/Control" unique_id=5142479]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -8.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_wco54")
+
+[node name="Mun" type="Label" parent="CanvasLayer/Main" unique_id=376232890]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 152.0
+offset_right = 80.0
+offset_bottom = 175.0
+scale = Vector2(0.5, 0.5)
+text = "0"
+horizontal_alignment = 1
+
+[node name="Vida" type="Label" parent="CanvasLayer/Main" unique_id=952022298]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 152.0
+offset_right = 96.0
+offset_bottom = 175.0
+scale = Vector2(0.5, 0.5)
+text = "0"
+horizontal_alignment = 1
+
+[node name="score" type="Label" parent="CanvasLayer/Main" unique_id=2111469645]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 164.0
+offset_right = 88.0
+offset_bottom = 187.0
+scale = Vector2(0.5, 0.5)
+text = "0"
+horizontal_alignment = 1
+
+[node name="max_score" type="Label" parent="CanvasLayer/Main" unique_id=38132623]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 176.0
+offset_right = 88.0
+offset_bottom = 199.0
+scale = Vector2(0.5, 0.5)
+text = "0"
+horizontal_alignment = 1
+
+[connection signal="button_down" from="CanvasLayer/Main/Control/atirar" to="." method="_on_atirar_button_down"]
+[connection signal="button_up" from="CanvasLayer/Main/Control/atirar" to="." method="_on_atirar_button_up"]

@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://brir8aqhrbk0d"]
+
+[ext_resource type="Script" uid="uid://ux1y501dyfqm" path="res://tst.gd" id="1_pp7b4"]
+
+[node name="Node2D" type="Node2D" node_paths=PackedStringArray("points_node")]
+script = ExtResource("1_pp7b4")
+points_node = NodePath("points")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="points" type="Node2D" parent="."]
+
+[node name="point1" type="Marker2D" parent="points"]
+position = Vector2(-12, -16)
+
+[node name="point2" type="Marker2D" parent="points"]
+position = Vector2(8, -24)
+
+[node name="point3" type="Marker2D" parent="points"]
+position = Vector2(20, -12)
+
+[node name="point4" type="Marker2D" parent="points"]
+position = Vector2(-4, 4)
+
+[node name="point5" type="Marker2D" parent="points"]
+position = Vector2(-16, 0)

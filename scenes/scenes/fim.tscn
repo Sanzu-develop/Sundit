@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=3 uid="uid://bdwqrudplvsx0"]
+
+[ext_resource type="Texture2D" uid="uid://dmfr00vyhmsam" path="res://sprites/botoes/bot_play.png" id="1_315xu"]
+[ext_resource type="Script" uid="uid://dpa7jgtv0yp6v" path="res://scripts/fim.gd" id="1_kxlh0"]
+[ext_resource type="Texture2D" uid="uid://coygmdch54fkf" path="res://sprites/botoes/bot_armas.png" id="2_lj4l6"]
+[ext_resource type="Texture2D" uid="uid://cpik5qmucxgl8" path="res://sprites/botoes/bot_alter_fundo.png" id="3_nhy44"]
+
+[node name="preto" type="ColorRect"]
+offset_right = 96.0
+offset_bottom = 192.0
+color = Color(0, 0, 0, 0.768627)
+script = ExtResource("1_kxlh0")
+
+[node name="Play" type="Button" parent="."]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 92.0
+offset_right = 64.0
+offset_bottom = 116.0
+icon = ExtResource("1_315xu")
+flat = true
+expand_icon = true
+
+[node name="Arsenal" type="Button" parent="."]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 116.0
+offset_right = 64.0
+offset_bottom = 140.0
+icon = ExtResource("2_lj4l6")
+flat = true
+expand_icon = true
+
+[node name="Alterar fundo" type="Button" parent="."]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 140.0
+offset_right = 64.0
+offset_bottom = 164.0
+icon = ExtResource("3_nhy44")
+flat = true
+expand_icon = true
+
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Arsenal" to="." method="_on_arsenal_pressed"]
+[connection signal="pressed" from="Alterar fundo" to="." method="_on_alterar_fundo_pressed"]

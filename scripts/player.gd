@@ -10,8 +10,12 @@ class_name Player
 #@onready var maod2 = $maos/maod2
 #@onready var arm = $maos/arm
 #@onready var bullet_pos = $"maos/bullet position"
+@export var bullet : PackedScene
 @export var target_point : TargetPoint
 var look_target_point : bool = false
+
+var use_again : bool = true
+var use_time : float = 0.5
 
 var tween : Tween
 var using_tween : bool = false
@@ -126,6 +130,8 @@ func _on_mira_path_runing() -> void:
 		move_in_direction(target_point.global_position)
 
 func move_in_direction(pos: Vector2):
+	last_point_tween = pos
+	
 	var angle_target = global_position.angle_to_point(pos)
 	
 	var easy_distance = wrapf(angle_target - global_rotation, -PI, PI)
@@ -141,3 +147,15 @@ func move_in_direction(pos: Vector2):
 	
 	tween.tween_property(self,"global_rotation",new_angle,0.15)
 	#tween.tween_method()
+
+func use_gun():
+	if not use_again: return
+	use_again = false
+	
+	var b = SceneFactory.spawn(bullet,self) as Bullet
+	
+	b.eject(last_point_tween)
+	
+	await get_tree().create_timer(use_time).timeout
+	
+	use_again = true

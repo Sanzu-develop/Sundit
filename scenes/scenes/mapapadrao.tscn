@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://bvhtr5v5dmc10" path="res://scripts/Main.gd" id="1_0nv3r"]
 [ext_resource type="PackedScene" uid="uid://cp08nxgn0kya0" path="res://scenes/player/Player.tscn" id="1_g3meh"]
 [ext_resource type="PackedScene" uid="uid://ddsp5covps30m" path="res://scenes/obj/mira.tscn" id="2_v5k24"]
-[ext_resource type="Script" uid="uid://c40ylgj82x662" path="res://scripts/player.gd" id="3_myx4i"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wco54"]
 
@@ -15,7 +14,6 @@ lbl = NodePath("CanvasLayer/Main/Mun")
 rotation_sensibility = 0.2
 
 [node name="Player" parent="." unique_id=2012547514 node_paths=PackedStringArray("target_point") instance=ExtResource("1_g3meh")]
-script = ExtResource("3_myx4i")
 target_point = NodePath("../mira")
 
 [node name="mira" parent="." unique_id=1903136370 instance=ExtResource("2_v5k24")]

@@ -6,7 +6,7 @@ extends Node2D
 
 @export var touching_input : Dictionary
 @export var rotation_sensibility : float = 0.1
-var radius_target_point 
+var radius_target_point : float
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventScreenTouch:
@@ -30,9 +30,13 @@ func manage_validate():
 		if not touch_data.has("drag_relative"):
 			radius_target_point = target_point.global_position.length()
 		
-		if touch_data.has("touch_position") and touch_data["touch_position"].y < 0:
-			var target_vec = touch_data["drag_position"] if touch_data.has("drag_position") else touch_data["touch_position"]
-			target_point.go_to(target_vec)
+		if touch_data.has("touch_position"):
+			if touch_data["touch_position"].y < 0:
+				var target_vec = touch_data["drag_position"] if touch_data.has("drag_position") else touch_data["touch_position"]
+				target_point.go_to(target_vec)
+			else:
+				player.use_gun()
+			
 			#touch_data.erase("touch_position")
 		
 		elif touch_data.has("drag_relative"):
@@ -43,7 +47,7 @@ func manage_validate():
 			
 			var move_angle = angle + (relative.x * rotation_sensibility)
 			
-			target_point.go_to(Vector2(cos(move_angle),sin(move_angle)) * radius_target_point)
+			target_point.go_to(Vector2(cos(move_angle),sin(move_angle)) * min(radius_target_point * 1.05,125.0))
 			
 			touch_data.erase("drag_relative")
 

@@ -33,7 +33,7 @@ func manage_validate():
 		if touch_data.has("touch_position") and touch_data["touch_position"].y < 0:
 			var target_vec = touch_data["drag_position"] if touch_data.has("drag_position") else touch_data["touch_position"]
 			target_point.go_to(target_vec)
-			touch_data.erase("touch_position")
+			#touch_data.erase("touch_position")
 		
 		elif touch_data.has("drag_relative"):
 			var relative = touch_data["drag_relative"]

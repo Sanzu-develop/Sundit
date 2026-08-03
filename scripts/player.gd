@@ -12,6 +12,11 @@ class_name Player
 #@onready var bullet_pos = $"maos/bullet position"
 @export var target_point : TargetPoint
 var look_target_point : bool = false
+
+var tween : Tween
+var using_tween : bool = false
+var last_point_tween := Vector2.ZERO
+
 var body_att = false
 var dict_arm_pos : Dictionary = {
 	0:{
@@ -118,4 +123,21 @@ func _on_mira_path_ended() -> void:
 
 func _on_mira_path_runing() -> void:
 	if look_target_point:
-		look_at(target_point.global_position)
+		move_in_direction(target_point.global_position)
+
+func move_in_direction(pos: Vector2):
+	var angle_target = global_position.angle_to_point(pos)
+	
+	var easy_distance = wrapf(angle_target - global_rotation, -PI, PI)
+	var new_angle = global_rotation + easy_distance
+	
+	if tween and tween.is_running():
+		tween.kill()
+	
+	tween = create_tween()
+	
+	tween.set_ease(Tween.EASE_OUT)
+	tween.set_trans(Tween.TRANS_QUAD)
+	
+	tween.tween_property(self,"global_rotation",new_angle,0.15)
+	#tween.tween_method()

@@ -12,6 +12,7 @@ script = ExtResource("1_0nv3r")
 player = NodePath("Player")
 target_point = NodePath("mira")
 lbl = NodePath("CanvasLayer/Main/Mun")
+rotation_sensibility = 0.2
 
 [node name="Player" parent="." unique_id=2012547514 node_paths=PackedStringArray("target_point") instance=ExtResource("1_g3meh")]
 script = ExtResource("3_myx4i")

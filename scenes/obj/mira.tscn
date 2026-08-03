@@ -20,3 +20,6 @@ color = Color(1, 0, 0, 0.74902)
 position = Vector2(4, 4)
 scale = Vector2(0.5, 0.5)
 shape = SubResource("RectangleShape2D_pinrp")
+
+[connection signal="path_ended" from="." to="." method="_on_path_ended"]
+[connection signal="path_initiate" from="." to="." method="_on_path_initiate"]

@@ -3,7 +3,7 @@ class_name Player
 
 #var player = padrao_r
 #var inim1 = inim_1
-#@onready var sprite = $Sprite
+@export var sprite : Sprite2D
 #@onready var maos = $maos
 #@onready var maoe = $maos/maoe
 #@onready var maod = $maos/maod
@@ -15,7 +15,7 @@ class_name Player
 var look_target_point : bool = false
 
 var use_again : bool = true
-var use_time : float = 0.5
+@export var use_time : float = 0.5
 
 var tween : Tween
 var using_tween : bool = false
@@ -132,10 +132,10 @@ func _on_mira_path_runing() -> void:
 func move_in_direction(pos: Vector2):
 	last_point_tween = pos
 	
-	var angle_target = global_position.angle_to_point(pos)
+	var angle_target = sprite.global_position.angle_to_point(pos)
 	
-	var easy_distance = wrapf(angle_target - global_rotation, -PI, PI)
-	var new_angle = global_rotation + easy_distance
+	var easy_distance = wrapf(angle_target - sprite.global_rotation, -PI, PI)
+	var new_angle = sprite.global_rotation + easy_distance
 	
 	if tween and tween.is_running():
 		tween.kill()
@@ -145,7 +145,7 @@ func move_in_direction(pos: Vector2):
 	tween.set_ease(Tween.EASE_OUT)
 	tween.set_trans(Tween.TRANS_QUAD)
 	
-	tween.tween_property(self,"global_rotation",new_angle,0.15)
+	tween.tween_property(sprite,"global_rotation",new_angle,0.15)
 	#tween.tween_method()
 
 func use_gun():

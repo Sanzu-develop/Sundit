@@ -25,7 +25,6 @@ config/icon="res://sprites/Personagens/Personagem base.png"
 Global="*res://scripts/Global.gd"
 SceneFactory="*uid://rca5h5e8uc7k"
 FileManager="*uid://bluhdrq4db6rm"
-ENetMultiPlayer="*uid://toepncpju4dt"
 
 [display]
 

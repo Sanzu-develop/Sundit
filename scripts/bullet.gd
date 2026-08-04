@@ -12,6 +12,8 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 func eject(direction: Vector2):
+	look_at(direction)
+	
 	var tween = create_tween()
 	tween.tween_property(self,"global_position",direction,1.0)
 	

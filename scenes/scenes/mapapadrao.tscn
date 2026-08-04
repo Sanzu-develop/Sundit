@@ -15,6 +15,7 @@ rotation_sensibility = 0.2
 
 [node name="Player" parent="." unique_id=2012547514 node_paths=PackedStringArray("target_point") instance=ExtResource("1_g3meh")]
 target_point = NodePath("../mira")
+use_time = 0.1
 
 [node name="mira" parent="." unique_id=1903136370 instance=ExtResource("2_v5k24")]
 

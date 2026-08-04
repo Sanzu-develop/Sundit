@@ -6,7 +6,6 @@
 size = Vector2(8, 4)
 
 [sub_resource type="Gradient" id="Gradient_2as5g"]
-colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_g7b7a"]
 gradient = SubResource("Gradient_2as5g")
@@ -20,7 +19,6 @@ collision_mask = 4
 script = ExtResource("1_t0u50")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1651844694]
-rotation = 1.5707964
 shape = SubResource("RectangleShape2D_akuly")
 
 [node name="ColorRect" type="Sprite2D" parent="CollisionShape2D2" unique_id=467292445]

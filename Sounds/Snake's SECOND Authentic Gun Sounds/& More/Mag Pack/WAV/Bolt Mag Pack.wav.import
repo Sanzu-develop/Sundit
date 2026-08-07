@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://8pae180qmrlq"
+path="res://.godot/imported/Bolt Mag Pack.wav-e0b25e63b7fd1194282c3ae4c9caf1bb.sample"
+
+[deps]
+
+source_file="res://Sounds/Snake's SECOND Authentic Gun Sounds/& More/Mag Pack/WAV/Bolt Mag Pack.wav"
+dest_files=["res://.godot/imported/Bolt Mag Pack.wav-e0b25e63b7fd1194282c3ae4c9caf1bb.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://podoweekol77"
+path="res://.godot/imported/9mm Pistol Chamber Check Part 1.mp3-19f2bbafb332fd66b698a390b3bce6e4.mp3str"
+
+[deps]
+
+source_file="res://Sounds/Snake's SECOND Authentic Gun Sounds/& More/Pistol/MP3/9mm Pistol Chamber Check Part 1.mp3"
+dest_files=["res://.godot/imported/9mm Pistol Chamber Check Part 1.mp3-19f2bbafb332fd66b698a390b3bce6e4.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

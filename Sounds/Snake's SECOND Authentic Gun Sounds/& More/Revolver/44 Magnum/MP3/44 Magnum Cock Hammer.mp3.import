@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cg8n3i0ypl287"
+path="res://.godot/imported/44 Magnum Cock Hammer.mp3-428166d820e851c380c2edcaa47f2464.mp3str"
+
+[deps]
+
+source_file="res://Sounds/Snake's SECOND Authentic Gun Sounds/& More/Revolver/44 Magnum/MP3/44 Magnum Cock Hammer.mp3"
+dest_files=["res://.godot/imported/44 Magnum Cock Hammer.mp3-428166d820e851c380c2edcaa47f2464.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

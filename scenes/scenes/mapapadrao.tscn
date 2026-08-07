@@ -14,10 +14,12 @@ lbl = NodePath("CanvasLayer/Main/Mun")
 rotation_sensibility = 0.2
 
 [node name="Player" parent="." unique_id=2012547514 node_paths=PackedStringArray("target_point") instance=ExtResource("1_g3meh")]
+rotation = -1.5707964
 target_point = NodePath("../mira")
 use_time = 0.1
 
 [node name="mira" parent="." unique_id=1903136370 instance=ExtResource("2_v5k24")]
+position = Vector2(0, -20)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=440195082]
 offset = Vector2(0, -40)

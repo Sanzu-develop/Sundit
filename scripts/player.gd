@@ -4,6 +4,7 @@ class_name Player
 #var player = padrao_r
 #var inim1 = inim_1
 @export var sprite : Sprite2D
+@export var gun : Gun
 #@onready var maos = $maos
 #@onready var maoe = $maos/maoe
 #@onready var maod = $maos/maod
@@ -155,6 +156,7 @@ func use_gun():
 	var b = SceneFactory.spawn(bullet,self) as Bullet
 	
 	b.eject(last_point_tween)
+	gun.eject()
 	
 	await get_tree().create_timer(use_time).timeout
 	

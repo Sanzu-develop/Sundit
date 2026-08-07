@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://yifusjklo7ov"
+path="res://.godot/imported/20 Gauge Spray.mp3-434dbb4e64f4a8164f65a01b3ce4da93.mp3str"
+
+[deps]
+
+source_file="res://Sounds/Snake's SECOND Authentic Gun Sounds/Full Sounds/20 Gauge/MP3/20 Gauge Spray.mp3"
+dest_files=["res://.godot/imported/20 Gauge Spray.mp3-434dbb4e64f4a8164f65a01b3ce4da93.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

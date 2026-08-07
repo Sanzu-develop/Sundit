@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://kkk58qh6e46d"
+path="res://.godot/imported/44 Magnum Eject One Casing.mp3-ea08a7ccfd9599dc2e2bc5db3ae0a120.mp3str"
+
+[deps]
+
+source_file="res://Sounds/Snake's SECOND Authentic Gun Sounds/& More/Revolver/44 Magnum/MP3/44 Magnum Eject One Casing.mp3"
+dest_files=["res://.godot/imported/44 Magnum Eject One Casing.mp3-ea08a7ccfd9599dc2e2bc5db3ae0a120.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

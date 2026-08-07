@@ -5,13 +5,16 @@
 [ext_resource type="PackedScene" uid="uid://dfwq8ot1v0g5e" path="res://scenes/player/bullet.tscn" id="2_tpg5x"]
 [ext_resource type="Texture2D" uid="uid://dcjdxa5csdio4" path="res://sprites/Personagens/Mao.png" id="3_7xbf8"]
 [ext_resource type="Texture2D" uid="uid://dwbc33072du77" path="res://sprites/Objetos/mp5 mao.png" id="4_2fiwl"]
+[ext_resource type="PackedScene" uid="uid://bkqjvyuasdiyn" path="res://scenes/obj/gun.tscn" id="5_npwbq"]
+[ext_resource type="AudioStream" uid="uid://dsqh0chk7l6d5" path="res://Sounds/Snake's SECOND Authentic Gun Sounds/Full Sounds/9mm/MP3/9mm Single.mp3" id="6_c3xxp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_akuly"]
 size = Vector2(7, 7)
 
-[node name="Player" type="Node2D" unique_id=821520603 node_paths=PackedStringArray("sprite") groups=["player"]]
+[node name="Player" type="Node2D" unique_id=821520603 node_paths=PackedStringArray("sprite", "gun") groups=["player"]]
 script = ExtResource("1_524rm")
 sprite = NodePath("Sprite")
+gun = NodePath("Sprite/maos/Gun")
 bullet = ExtResource("2_tpg5x")
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=1419520405]
@@ -30,7 +33,12 @@ position = Vector2(-1, 0)
 scale = Vector2(0.502954, 0.494939)
 texture = ExtResource("3_7xbf8")
 
+[node name="Gun" parent="Sprite/maos" unique_id=1215817912 instance=ExtResource("5_npwbq")]
+position = Vector2(2.00002, 0)
+scale = Vector2(0.5, 0.5)
+
 [node name="arm" type="Sprite2D" parent="Sprite/maos" unique_id=1898640057]
+visible = false
 position = Vector2(2, 0)
 rotation = 2.35619
 scale = Vector2(0.498963, 0.498963)
@@ -50,6 +58,10 @@ position = Vector2(9, 3.25799e-05)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/Area2D" unique_id=1977114156]
 shape = SubResource("RectangleShape2D_akuly")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=498732745]
+stream = ExtResource("6_c3xxp")
+playback_type = 1
 
 [connection signal="body_entered" from="Sprite/Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Sprite/Area2D" to="." method="_on_area_2d_body_exited"]
